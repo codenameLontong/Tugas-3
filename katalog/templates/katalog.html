@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+ {% block content %}
+
+  <h1>Tugas 2 Assignment PBP/PBD</h1>
+
+  <p><b>Name:</b> {{ nama }}</p>
+  <p><b>Student ID:</b> {{ id }}</p>
+
+  <table>
+    <tr>
+      <th>Item Name</th>
+      <th>Item Price</th>
+      <th>Item Stock</th>
+      <th>Rating</th>
+      <th>Description</th>
+      <th>Item URL</th>
+    </tr>
+    {% comment %} Add the data below this line {% endcomment %}
+    {% for item in list_barang %}
+    <tr>
+        <td>{{item.item_name}}</td>
+        <td>{{item.item_price}}</td>
+        <td>{{item.item_stock}}</td>
+        <td>{{item.rating}}</td>
+        <td>{{item.description}}</td>
+        <td>{{item.item_url}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+ {% endblock content %}
